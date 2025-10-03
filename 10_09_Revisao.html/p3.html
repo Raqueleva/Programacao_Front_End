@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+        <meta charset="UTF-8">
+        <title>Página 3</title>
+
+        <style>
+            body{
+                font-family: "Comic Sans MS", cursive, sans-serif;
+            }
+
+            /* BOX */
+            #div_pai{
+                position: fixed;
+                top: 15px;
+                left: 10px;
+                display: flex;
+                width: 400px;
+            }
+            #div_pai div{
+                background-color:#BDDFFF;
+                height: 30px;
+                width: 100%;
+                text-align: center;
+                align-content: center;
+                font-weight: 100;
+                font-size: 11px;
+            }
+            #div_pai div:hover{
+                background-color:#69aff0;
+                cursor: pointer;
+                text-shadow: 0px 1px 5px rgb(236, 246, 167);
+            }
+
+
+            #div_pai div:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border: 1px solid #555;
+            }
+
+            #div_pai div:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-top:    1px solid #555;
+                border-right:  1px solid #555;
+                border-bottom: 1px solid #555;
+            }
+
+            #div_pai div:not( first-child , last-child ) {
+                border-top:    1px solid #555;
+                border-right:  1px solid #555;
+                border-bottom: 1px solid #555;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="div_pai">
+            <div>Item A</div>
+            <div>Item B</div>
+            <div>Item C</div>
+            <div>Item D</div>
+            <div>Item E</div>
+        </div>
+    </body>
+
+</html>

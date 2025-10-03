@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>FORMULÁRIO</title>
+    </head>
+
+    <body>
+        <form action="">
+            <h2>Formulário de Cadastro</h2>
+            <p>Preencha os campos abaixo:</p>
+            <!--
+              * value       = Será apresentado dentro do input
+              * placeholder = é o comentário que aparece quando o campo está vazio.
+              * type        = Define o tipo de campo, como text, number, date, etc
+              * name        = será o nome do parâmetro enviado.
+            -->
+            <label for="in_nome">Nome</label>
+            <input type="text"
+                   placeholder="Digite aqui seu nome..."
+                   name="in_nome"
+                   id="in_nome">
+                   <br><br>
+
+            <label for="in_telefone">Telefone</label>
+            <input type="tel" placeholder="Digite aqui seu telefone..." name="in_telefone" value=""><br><br>
+
+            <label for="in_email">E-mail</label>
+            <input type="email" placeholder="Digite aqui seu email..." name="in_email" value=""><br><br>
+
+            <label for="in_dates">Data</label>
+            <input type="date"   name="in_dates"><br><br>
+
+            <label for="in_time">Horário</label>
+            <input type="time"   name="in_horas"><br><br>
+
+            <input type="file"   name="in_arquivo"><br><br>
+
+            <input type="color"   name="in_cor"><br><br>
+
+            Pagamento atecipado:<br>
+            <!-- radio = Escolha única -->
+            <label for="inp_pag_s">Sim</label>
+            <input type="radio" checked name="inp_pag" id="inp_pag_s"> |
+            <label for="inp_pag_n">Não</label>
+            <input type="radio" name="inp_pag" id="inp_pag_n">
+
+            <!-- checkbox = Múltiplas escolhas -->
+            <br><br>
+            <label for="inp_ck_mostarda">Mostarda</label>
+            <input type="checkbox" checked name="inp_ck_mostarda" id="inp_ck_mostarda">
+            <br>
+            <label for="inp_ck_maionese">Maionese</label>
+            <input type="checkbox" name="inp_ck_maionese" id="inp_ck_maionese">
+            <br>
+            <label for="inp_ck_catchup">Catchup</label>
+            <input type="checkbox" name="inp_ck_catchup" id="inp_ck_catchup">
+            <br><br>
+
+            <input type="submit" value="*Enviar!*" style="background-color: #0077cc; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;" />
+
+        </form>
+    </body>
+</html>

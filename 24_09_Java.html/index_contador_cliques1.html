@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>JS</title>
+        <script>
+            // = atribuição, 'colocando o valor na variável!'
+            var numero = 0;
+            window.document.title = " => "+numero;
+
+            function aumenta_valor()
+            {
+                console.log('aumenta_valor() Ini');
+                // numero = numero+1;
+                // numero+=1;
+                numero++;
+                window.document.title = " => "+numero;
+                // ....
+                console.log('aumenta_valor() Fim');
+            }
+            function lido() {
+                // faça em um entervalo
+                setInterval( piscar,2000000); // 2000000 milissegundos
+            }
+            // function piscar(){
+            //     const dataAtual = new Date();
+            //     console.log('dataAtual = '+dataAtual);
+            //     // Formata a data e hora para o fuso horário do Brasil
+            //     const options = { timeZone: 'America/Sao_Paulo' }; // Define o fuso horário para o Brasil
+            //     const dataHoraBrasil = dataAtual.toLocaleString('pt-BR', options);
+            //     window.document.title = " * * * *  * "+dataHoraBrasil+" * * * *  * ";
+
+
+            {
+              var data = new Date();
+              var ano = data.getFullYear();
+              var mes = data.getMonth() + 1; // Adiciona 1 porque os meses começam do 0
+              var dia = data.getDate();
+              var hora = data.getHours();
+              var minutos = data.getMinutes();
+
+              var segundos = data.getSeconds();
+              segundos = segundos<10 ? '0'+segundos : segundos;
+
+              var dt = `${dia}/${mes}/${ano} às ${hora}:${minutos}:${segundos}`;
+              var dt = `${hora}:${minutos}:${segundos}`;
+              window.document.title = " * * * *  * "+dt+" * * * *  * ";
+
+
+                // faça uma vez daqui a um tempo.
+              setTimeout(() => {
+                    window.document.title = " => "+numero;
+              }, 1000);
+            }
+        </script>
+    </head>
+    <body onload="lido()">
+        <button onclick="aumenta_valor()"> ++ </button><hr>
+
+        <input type="text"
+               onclick="console.log('onclick')"
+               onchange="console.log('onchange')"
+               onblur="console.log('onblur')"
+               onselect="console.log('onselect')"
+               onfocus="console.log('onfocus')"
+               onmouseover="console.log('onmouseover')"
+            >
+
+            <textarea onselect="console.log('onselect')">
+                ABC...
+            </textarea>
+    </body>
+
+</html>
+
+<script>
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = 1;
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = '';
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = {};
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = [];
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = true;
+    // console.log('typeof(numero) = '+typeof(numero));
+
+    // numero = 9.5;
+    // console.log('typeof(numero) = '+typeof(numero));
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Página 2</title>
+        <style>
+            form{
+                width: 200px;
+                border: 1px solid #ddd;
+                padding: 5px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+            }
+            form input:not(.bt){
+                width: 100%;
+            }
+            .bt{
+                float: right;
+                margin-right: -6px;
+                margin-top: 10px;
+                border: 1px solid #292828;
+                border-radius: 3px;
+            }
+            .bt:active{
+                background-color: #94e542;
+                border: 1px solid #292828;
+                border-radius: 2px;
+            }
+
+            body{
+                font-family: "Comic Sans MS", cursive, sans-serif;
+            }
+            /* POR ID */
+            #inp_nome, #inp_email, #inp_pass{
+                background-color: bisque;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+            }
+            /* POR CLASSE */
+            .inp:hover{
+                background-color:  rgb(238, 142, 7) !important;
+                color: #d83131;
+            }
+            /* focus => quando o campo está com o cursor para escrever */
+            .inp:focus{
+                background-color:  rgb(51, 21, 131);
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Página Exemplo Formulário</h1>
+        <form action="">
+            <input type="text"     class="inp"         id="inp_nome"  placeholder="Nome"    > <br>
+            <input type="email"    class="inp" name="" id="inp_email" placeholder="Email"   > <br>
+            <input type="password" class="inp" name="" id="inp_pass"  placeholder="********"> <br>
+            <input type="button"   class="bt"  name="" id=""          value="Enviar"><br>
+        </form>
+    </body>
+</html>

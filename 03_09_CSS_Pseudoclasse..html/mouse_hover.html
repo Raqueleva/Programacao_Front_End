@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-classes</title>
+  <style>
+
+    /*1º ELEMENTO*/
+    div{
+      height: 100px;
+      width: 100px;
+      border: 1px solid #555;
+      align-content: center;
+      text-align: center;
+      cursor: pointer;
+    }
+    /*2º ELEMENTO*/
+    .quadrado{
+      height: 100px;
+      width: 100px;
+      border: 1px solid #555;
+      align-content: center;
+      text-align: center;
+    }
+    /*3º ELEMENTO*/
+    .redonda{
+      height: 100px;
+      width: 100px;
+      border: 1px solid rgb(214, 8, 8);
+      align-content: center;
+      text-align: center;
+      border-radius: 50px;
+    }
+    /*3º ID */
+    #div_A{
+      color: red;
+      font-size: 30px;
+      /* transition: 1s; */
+    }
+    #div_A:hover{
+      color: blue;
+      cursor: pointer;
+    }
+    #div_B{
+      color: green;
+      font-size: 30px;
+      /* transition: 1s; */
+    }
+    #div_B:hover{
+      color: orange;
+      cursor: pointer;
+    }
+    #div_C{
+      color: purple;
+      font-size: 30px;
+      /* transition: 1s; */
+    }
+    #div_C:hover{
+      color: brown;
+      cursor: pointer;
+    }
+    #div_D{
+      color: rgb(214, 8, 8);
+      font-size: 30px;
+      /* transition: 1s; */
+    }
+    #div_D:hover{
+      color: yellow;
+      cursor: pointer;
+    }
+    #div_E{
+      color: rgb(8, 214, 214);
+      font-size: 30px;
+      /* transition: 1s; */
+    }
+    #div_E:hover{
+      color: rgb(8, 8, 214);
+      cursor: pointer;
+    }
+    #inp_botao:hover{
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+    #inp_botao:active{
+      height: 30px;
+      width: 100px;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #555;
+    }
+    #inp_texto:focus{
+      background-color: lightblue;
+      color: black;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h2>Pseudo-classes
+  <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements">
+    MDN
+  </h2>
+</a>
+  <input type="text" id="inp_texto" value="Texto">
+  <input type="button" id="inp_botao" value="Botão">
+  <br><br>
+
+  <div id="div_A" class="quadrado"> A </div>
+  <div id="div_B" class="quadrado"> B </div>
+  <div id="div_C" class="quadrado"> C </div>
+  <div id="div_D" class="redonda"> D </div>
+  <div id="div_E" class="redonda"> E </div>
+
+</body>
+</html>

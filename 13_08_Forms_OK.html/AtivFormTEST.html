@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .campo {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input, select {
+      padding: 5px;
+    }
+
+    .linha {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .caixa {
+      width: 107px;
+      height: 69px;
+      border: 1px solid black;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    table {
+      margin-top: 10px;
+    }
+
+    td {
+      padding: 5px 10px;
+    }
+
+    .botoes {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <div class="linha">
+      <div class="campo">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+      </div>
+      <div class="caixa">107 x 69</div>
+    </div>
+
+    <div class="campo">
+      <label>Email:</label>
+      <input type="email" name="email">
+    </div>
+
+    <div class="campo">
+      <label>Senha:</label>
+      <input type="password" name="senha">
+    </div>
+
+    <div class="campo">
+      <label>Qual semestre?</label>
+      <select name="semestre">
+        <option>1</option>
+        <option>2</option>
+        <option>Outro</option>
+      </select>
+    </div>
+
+    <table>
+      <tr>
+        <td><b>Habilidades</b></td>
+        <td colspan="3"><b>Nível de conhecimento</b></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"> HTML</td>
+        <td><input type="radio" name="nivel_html"> Baixo</td>
+        <td><input type="radio" name="nivel_html"> Médio</td>
+        <td><input type="radio" name="nivel_html"> Alto</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"> CSS</td>
+        <td><input type="radio" name="nivel_css"> Baixo</td>
+        <td><input type="radio" name="nivel_css"> Médio</td>
+        <td><input type="radio" name="nivel_css"> Alto</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"> JS</td>
+        <td><input type="radio" name="nivel_js"> Baixo</td>
+        <td><input type="radio" name="nivel_js"> Médio</td>
+        <td><input type="radio" name="nivel_js"> Alto</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"> jQuery</td>
+        <td><input type="radio" name="nivel_jquery"> Baixo</td>
+        <td><input type="radio" name="nivel_jquery"> Médio</td>
+        <td><input type="radio" name="nivel_jquery"> Alto</td>
+      </tr>
+    </table>
+
+    <div class="botoes">
+      <button type="button">Voltar</button>
+      <button type="reset">Limpar</button>
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+
+</body>
+</html>
+

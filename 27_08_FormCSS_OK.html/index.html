@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Form CSS</title>
+    </head>
+
+    <style>
+        #form_1{
+            border: 2px blue solid;
+            width: 350px;
+            font-size: 12px;
+        }
+        #form_1 > table{
+            width: 100%;
+            border: 1px red solid;
+        }
+        .input_texto{
+            width: 95%;
+            border: 1px green solid;
+        }
+
+        .coluna_1{
+            width: 100px;
+        }
+        .coluna_2{
+            width: 120px;
+        }
+        .align_right{
+            text-align: right;
+        }
+        img{
+            border: 1px solid #000;
+            height: 45px;
+            width: 100%;
+        }
+
+        #sel_sem{
+            width: 100%;
+        }
+        /* ASTERISTICO --> todos os elementos */
+        #tr_botoes > td > *{
+            width: 80%;
+        }
+
+        #h2_titulo{
+            color: red;
+        }
+    </style>
+
+    <body>
+        <h2 id="h2_titulo">Form CSS</h2>
+
+        <form id="form_1" action="arquivo_destino.html">
+
+            <!-- 1º -> TABELE (Pai)-->
+            <table>
+                <!-- 2º tr -> ROW (Filho) -->
+                <tr>
+                    <!-- 3º td -> DATA(coluna) (Neto) -->
+                    <td class="coluna_1 align_right">
+                        Nome:
+                    </td>
+                    <td class="coluna_2">
+                        <input type="text" class="input_texto"
+                               name="inp_nome">
+                    </td>
+                    <td class="coluna_3" rowspan="2"><img src="minha_img.jpg"></td>
+                </tr>
+
+                <tr>
+                    <td class="align_right">
+                        Email:
+                    </td>
+                    <td>
+                        <input name="inp_email"
+                               type="email" class="input_texto">
+                    </td>
+                    <!-- <td>l2 c3</td> -->
+                </tr>
+
+                <tr>
+                    <td class="align_right">Senha: </td>
+                    <td>
+                        <input name="inp_pass1"
+                               type="password" class="input_texto">
+                    </td>
+
+                    <td>
+                        <input name="inp_pass2"
+                               type="password" class="input_texto">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align_right">
+                    Semestre:</td>
+                    <td colspan="2">
+                        <select name="sel_sem" id="sel_sem">
+                            <option value="sem_1">1º Primeiro </option>
+                            <option value="sem_2">2º Primeiro </option>
+                            <option value="sem_3">3º Primeiro </option>
+                            <option selected value="sem_4">4º Primeiro </option>
+                        </select>
+                    </td>
+                    <!-- <td>L4 C3</td> -->
+                </tr>
+
+                <tr> <td colspan="3"> <BR> </td> </tr>
+
+                <tr>
+                    <td>Habilidades</td>
+                    <td colspan="2">Nível de conhecimento </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="chk_html" id="ch_html" value="html_sim">
+                        <label for="ch_html"> HTML </label>
+                    </td>
+                    <td colspan="2">
+                        <input type="radio" name="rad_html" value="html_baix"> Baixo &
+
+
+                        <input type="radio" name="rad_html" value="html_medi"> Médio &
+
+
+                        <input type="radio" name="rad_html" value="html_alto"> Alto
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="chk_css" id="chk_css">
+                        <label for="chk_css"> CSS </label>
+                    </td>
+                    <td colspan="2">
+                        <input type="radio" name="rad_css" value="css_baix"> Baixo &
+
+
+                        <input type="radio" name="rad_css" value="css_medi"> Médio &
+
+
+                        <input type="radio" name="rad_css" value="css_alto"> Alto
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="chk_js" id="chk_js" >
+                        <label for="chk_js"> JS </label>
+                    </td>
+                    <td colspan="2">
+                        <input type="radio" name="rad_js" value="js_baix"> Baixo &
+
+
+                        <input type="radio" name="rad_js" value="js_medi"> Médio &
+
+
+                        <input type="radio" name="rad_js" value="js_alto"> Alto
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="ch_jq" id="ch_jq">
+                        <label for="ch_html"> jQuery </label>
+                    </td>
+                    <td colspan="2">
+                        <input type="radio" name="rad_jq" value="jq_baix"> Baixo &
+
+
+                        <input type="radio" name="rad_jq" value="jq_medi"> Médio &
+
+
+                        <input type="radio" name="rad_jq" value="jq_alto"> Alto
+                    </td>
+                </tr>
+
+                <tr><td colspan="3"> </td></tr>
+
+                <tr id="tr_botoes">
+                    <td>
+                        <input type="button" name="" id="" value="Voltar">
+                    </td>
+                    <td style="text-align:center;">
+
+                        <input type="reset" name="" id="" value="Limpar">
+                    </td>
+                    <td style="text-align:right;">
+                        <input type="submit" name="" id="" value="Enviar">
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </body>
+
+</html>

@@ -1,0 +1,22 @@
+/* SELETRO por ELEMENTO */
+body {
+  background-color: red;
+  color: blue;
+}
+
+div,
+a {
+  border-radius: 10px;
+  border: #F00 solid 1px;
+  height: 38px;
+  width: 43px;
+  background-image: url(images.jpg);
+  background-position-x: 45px;
+  background-position-y: 42px;
+}
+
+/* SELETOR GENERICO POR CLASSE ( . ) PONT */
+.minha-classe {
+  color: #FFF;
+  background-color: #000;
+}
