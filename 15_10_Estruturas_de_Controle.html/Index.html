@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>FORM OnSUBMIT</title>
+        <script>
+            var st = "";
+            var mensagem = '';
+            var elem_msg;
+
+            function body_lido() {
+                elem_msg = window.document.getElementById('p_msg');
+            }
+
+            function enviando_form()
+            {
+                console.log('enviando_form() Ini');
+                var retorno = true;
+
+                // Através das propriedades com o NOME do FORM
+                var email = document.form_login.inp_email.value;
+                console.log('enviando_form() -> value de email = '+email);
+
+                // GET BY - Ignora árvore de pais e filhos e encontra por ID
+                var senha = document.getElementById('inp_senha');
+                console.log('enviando_form() -> value de inp_senha = '+senha);
+                console.log('enviando_form() -> value de inp_senha.value = '+senha.value);
+
+                // (property) String.length: number
+                var tamanho_da_string = senha.value.length;
+                console.log('enviando_form() -> tamanho_da_string = '+tamanho_da_string );
+
+                // Boolean: verdadeiro ou falso ' true | false '
+                // var teste = tamanho_da_string >= 5 && tamanho_da_string <= 10;
+                // console.log('enviando_form() -> typeof(teste) = '+typeof(teste) );
+                // console.log('enviando_form() -> teste = '+teste );
+
+                // if( teste == false ) {
+                //     alert('Valor inadequado!')
+                // }
+
+                if ( tamanho_da_string < 5 )
+                {
+                    retorno = false;
+                    console.log('Senha deve conter no mínimo 5 caracteres!')
+                    mensagem = 'Senha deve conter no mínimo 5 caracteres!';
+                }
+                else if ( tamanho_da_string > 10 )
+                {
+                    retorno = false;
+                    console.log('Senha deve conter no máximo 10 caracteres!')
+                    mensagem = 'Senha deve conter no máximo 10 caracteres!';
+                }
+                else{
+                    console.log('enviando_form() -> Senha com a quantidade OK!');
+                    var str = senha.value;
+                    var contador_numeros = 0;
+                    var contador_letras  = 0;
+                    for (var i=0;  i<str.length; i++ )
+                    {
+                        var caracter = str[i];
+                        console.log('[str['+i+'] = ('+caracter+')');
+                        if( caracter == ' ' ) {
+                            mensagem = 'A senha não pode conter espaços!';
+                            console.log(' é um espaço');
+                            retorno = false;
+                        }
+                        else if( isNaN( Number(caracter) ) == true  )
+                        {
+                            contador_letras++;
+                            console.log('isNaN( )! ')
+                        }
+                        else if(  isNaN(Number( caracter )) == false  )
+                        // else if(  ! isNaN(Number( caracter ))  )
+                        {
+                            contador_numeros++;
+                            console.log('é um número! ')
+                        }
+                    }
+                    if(contador_letras<3){
+                        mensagem = 'A senha deve conter no mínimo 3 Letras';
+                    }
+                    if(contador_numeros<3){
+                        mensagem = 'A senha deve conter no mínimo 3 Números';
+                    }
+                    console.log( 'contador_letras = '+contador_letras)
+                    console.log( 'contador_numeros = '+contador_numeros)
+
+                } // FIM da function
+                // debugger //Faz o navegador congelar o script e mostrar os valores no depurador
+                retorno = retorno && contador_letras>=3 && contador_numeros>=3;
+                console.log('enviando_form() FIM retorno == '+retorno );
+                elem_msg.innerText = mensagem;
+                return  retorno
+            } // Fim da enviando_form()
+        </script>
+    </head>
+
+    <body onload="body_lido()">
+        <h1>FORM OnSUBMIT</h1>
+        Atividade:
+        Apos validar a quantidade de caractares da senha, vamos validar tambem
+        a: mínimo 3 numeros
+        b: mínimo 3 letras
+        c: não pode conter espaços
+
+        <form name="form_login"
+            onsubmit="return enviando_form()"
+            action="destino.php">
+            <!-- onsubmit="return false" boicota o envio do form -->
+            Email: <input type="text" name="inp_email"><br>
+            Senha: <input type="text" name="inp_senha" id="inp_senha"><br>
+            <input type="submit" value="Enviar">
+        </form>
+
+        <p id="p_msg" style="color: red; font-size: 10px;">
+            ...
+        </p>
+    </body>
+</html>

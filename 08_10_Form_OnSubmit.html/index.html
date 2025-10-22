@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>FORM OnSUBMIT</title>
+    <script>
+            var st = "";
+            st.length
+            function enviando_form()
+            {
+                console.log('enviando_form() Ini');
+                // return false
+
+                // Através das propriedades com o NOME do FORM
+                var email = document.form_login.inp_email.value;
+                console.log('enviando_form() -> value de email = '+email);
+
+                // GET BY - Ignora árvore de pais e filhos e encontra por ID
+                var senha = document.getElementById('inp_senha');
+                console.log('enviando_form() -> value de inp_senha = '+senha);
+                console.log('enviando_form() -> value de inp_senha.value = '+senha.value);
+
+                // (property) String.length: number
+                var tamanho_da_string = senha.value.length;
+                console.log('enviando_form() -> tamanho_da_string = '+tamanho_da_string );
+
+                // Boolean: verdadeiro ou falso ' true | false '
+                // var teste = tamanho_da_string >= 5 && tamanho_da_string <= 10;
+                // console.log('enviando_form() -> typeof(teste) = '+typeof(teste) );
+                // console.log('enviando_form() -> teste = '+teste );
+
+                // if( teste == false ) {
+                //     alert('Valor inadequado!')
+                // }
+
+                if ( tamanho_da_string < 5 ) {
+                    alert('Senha deve conter no mínimo 5 caracteres!')
+                }
+                else if ( tamanho_da_string > 10 ) {
+                    alert('Senha deve conter no máximo 10 caracteres!')
+                }
+                else{
+                    console.log('enviando_form() -> Senha OK!')
+                }
+
+
+                // debugger
+                // 'debugger' Faz o navegador congelar o script e mostrar os valores no depurador
+                return false
+                console.log('enviando_form() FIM');
+            }
+            //
+        </script>
+  </head>
+
+  <body onload>
+    <h1>FORM OnSUBMIT</h1>
+    Atividade:
+    Apos validar a quantidade de caractares da senha, vamos validar tambem
+    a: mínimo 3 numeros
+    b: mínimo 3 letras
+    c: não pode conter espaços
+
+    <form name="form_login" onsubmit="return enviando_form()" action="destino.php">
+      <!-- onsubmit="return false" boicota o envio do form -->
+      Email: <input type="text" name="inp_email"><br>
+      Senha: <input type="text" name="inp_senha" id="inp_senha"><br>
+      <input type="submit" value="Enviar">
+    </form>
+
+  </body>
+</html>

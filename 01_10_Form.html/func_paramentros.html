@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+            var var_global = 0; //GLOBAL
+
+            var inp_v1,inp_v2,inp_res;
+
+            function body_lido(){
+                console.log('body_lido() INI');
+                inp_v1 = document.getElementById('inp_v1');
+                inp_v2 = document.getElementById('inp_v2');
+                inp_res = document.getElementById('inp_res');
+                console.log('body_lido() FIM');
+            }
+            function realiza_calculo( par_1, par_2 )
+            {
+                // Desafio: vaidar se os parametros são números, caso não for fazer um alert avisando
+                // Dica: Number()
+                console.log('realiza_calculo() par_1=('+par_1+') par_2=('+par_2+')');
+                var soma = par_1 + par_2; // soma LOCAL
+                var_global = soma;
+                // debugger;
+                console.log('realiza_calculo() soma=('+soma+') ');
+                return soma;
+                console.log('realiza_calculo() soma=('+soma+') ');
+            }
+            function clicado_calcular()
+            {
+                console.log('clicado_calcular() Ini');
+                var v1 = inp_v1.value;
+                var v2 = inp_v2.value;
+                var valor_recebido = realiza_calculo( v1, v2);
+                inp_res.value = valor_recebido;
+                console.log('clicado_calcular() valor_recebido=('+valor_recebido+')');
+                console.log('clicado_calcular() Fim');
+            }
+            //
+        </script>
+  </head>
+
+  <body onload="body_lido()">
+    form_login<br>
+    <form name="form_login"
+      action>
+      <!-- onsubmit="return false" boicota o envio do form -->
+      V1: <input type="text" name="inp_v1" id="inp_v1"><br>
+      V2: <input type="text" name="inp_v2" id="inp_v2"><br>
+      Resultado: <input type="text" name="inp_res" id="inp_res"><br>
+      <input type="button"
+        value="Calcular"
+        onclick="clicado_calcular()">
+    </form>
+  </body>
+</html>

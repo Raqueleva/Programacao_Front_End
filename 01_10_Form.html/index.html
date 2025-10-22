@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+            function clicado_enviar()
+            {
+                console.log('clicado_enviar() Ini');
+                var email = document.form_login.inp_email.value;
+                alert('Email = '+email);
+            }
+            //
+        </script>
+  </head>
+
+  <body>
+    form_login<br>
+    <form name="form_login"
+      action>
+      <!-- onsubmit="return false" boicota o envio do form -->
+      <input type="text" name="inp_email">
+      <input type="button"
+        value="Enviar"
+        onclick="clicado_enviar()">
+    </form>
+  </body>
+</html>
